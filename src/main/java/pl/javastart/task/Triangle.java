@@ -34,4 +34,22 @@ class Triangle {
     public void setSide3(double side3) {
         this.side3 = side3;
     }
+
+    public double calculateArea() {
+        double a = side1;
+        double b = side2;
+        double c = side3;
+        double s = (a + b + c) / 2;
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+
+    public String getTriangleInfo() {
+        return "Trójkąt o bokach " + side1 + ", " + side2 + ", " + side3 + ":\n"
+                + "Pole: " + calculateArea() + "\n"
+                + "Obwód: " + calculatePerimeter();
+    }
 }
